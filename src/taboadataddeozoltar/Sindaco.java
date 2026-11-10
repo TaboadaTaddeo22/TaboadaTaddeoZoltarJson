@@ -4,12 +4,14 @@
  */
 package taboadataddeozoltar;
 
+import java.io.IOException;
+
 /**
  *
  * @author tadde
  */
 public class Sindaco extends Personalita {
-    public Sindaco() {
+    public Sindaco() throws IOException {
         super("Sindaco");
     }
 }

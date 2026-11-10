@@ -4,12 +4,14 @@
  */
 package taboadataddeozoltar;
 
+import java.io.IOException;
+
 /**
  *
  * @author tadde
  */
 public class Zoltar extends Personalita {
-    public Zoltar() {
+    public Zoltar() throws IOException {
         super("Zoltar");
     }
 }

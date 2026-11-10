@@ -1,16 +1,19 @@
 package taboadataddeozoltar;
  
+import java.io.IOException;
 import java.util.Random;
  
 public class Personalita {
     // Attributi
-    String[] messaggi;
-    private Random random = new Random();
+    private String nome;
+    private String[] messaggi;
  
     // Ogni classe "figlia" passa il proprio nome (la chiave nel JSON)
-    public Personalita(String nome) {
-        // Il JSON è gestito dal DataManager (letto una sola volta e condiviso)
-        String[] letti = DataManager.getInstance().getMessaggi(nome);
+    public Personalita(String nome) throws IOException {
+        DataManager dM = new DataManager();
+        this.nome = nome;
+        
+        String[] letti = dM.getMessaggi(nome);
         if (letti == null || letti.length == 0) {
             letti = new String[] { "..." };
         }
@@ -19,6 +22,16 @@ public class Personalita {
  
     // Metodo che restituisce un messaggio casuale
     public String risposta() {
-        return messaggi[random.nextInt(messaggi.length)];
+        Random r = new Random();
+        return messaggi[r.nextInt(messaggi.length)];
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String[] getMessaggi() {
+        return messaggi;
+    }
+    
 }

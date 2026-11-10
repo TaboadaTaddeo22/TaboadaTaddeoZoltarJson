@@ -13,5 +13,5 @@ import java.util.Map;
  * di frasi) in un formato testuale e scriverli su un Writer.
  */
 public interface Serializzazione {
-    void serializza(Map<String, String[]> dati, Writer writer) throws IOException;
+    void serializza() throws IOException;
 }

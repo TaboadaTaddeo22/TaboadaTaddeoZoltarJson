@@ -5,6 +5,7 @@
 package taboadataddeozoltar;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
+import java.io.IOException;
 
 /**
  *
@@ -15,7 +16,7 @@ public class TaboadaTaddeoZoltar {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         FrameZoltar frmZoltar = new FrameZoltar();
         // Schermo intero
         frmZoltar.setExtendedState(MAXIMIZED_BOTH);

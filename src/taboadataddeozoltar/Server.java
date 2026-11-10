@@ -17,10 +17,11 @@ public class Server {
     private int porta = 12345;
     private ServerSocket server;
     // Personalità default
-    private Personalita personalita = new Zoltar();   
+    private Personalita personalita;   
     private JTextArea output;
     
-    public Server(JTextArea output) {
+    public Server(JTextArea output) throws IOException {
+        this.personalita = new Zoltar();
         this.output = output;
     }
  
@@ -55,7 +56,7 @@ public class Server {
     }
     
     // Elaborazione del messaggio ricevuto dal Client
-    private String elabora(String richiesta) {
+    private String elabora(String richiesta) throws IOException {
         String[] parti = richiesta.split("_", 2);
         String comando = parti[0];
         String argomento = parti.length > 1 ? parti[1] : "";

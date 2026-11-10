@@ -23,7 +23,7 @@ public class FrameZoltar extends javax.swing.JFrame {
     /**
      * Creates new form FrameZoltar
      */
-    public FrameZoltar() {
+    public FrameZoltar() throws IOException {
         initComponents();
         s = new Server(txaZoltar);
         c = new Client(txaZoltar);
@@ -301,7 +301,13 @@ public class FrameZoltar extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new FrameZoltar().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> {
+            try {
+                new FrameZoltar().setVisible(true);
+            } catch (IOException ex) {
+                System.getLogger(FrameZoltar.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,12 +4,14 @@
  */
 package taboadataddeozoltar;
 
+import java.io.IOException;
+
 /**
  *
  * @author tadde
  */
 public class Eldego extends Personalita {
-    public Eldego() {
+    public Eldego() throws IOException {
         super("Eldego");
     }
 }
